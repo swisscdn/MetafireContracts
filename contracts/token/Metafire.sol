@@ -63,7 +63,7 @@ contract MetaFire is ERC20, Ownable {
         address to,
         uint256 amount
     ) private {
-        require(!knownBots[from], "You're in BotList");
+        require(!knownBots[from], "You are in Bot List");
         if (!_isFeeExempt[from] && totalFee > 0 && _isLiquidityPair[to]) {
             if (_burnFee > 0) {
                 _burn(from, amount.mul(_burnFee).div(100));
